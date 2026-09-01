@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dream Big Freelance</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#07111f;color:#fff}
+nav{height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;background:#091629cc;backdrop-filter:blur(12px);position:sticky;top:0;z-index:10}
+.logo{font-size:24px;font-weight:900;color:#f8c94a}.logo span{color:#fff}
+nav button,.hero button{border:0;border-radius:12px;padding:12px 20px;font-weight:800;cursor:pointer}
+nav button{background:#f8c94a;color:#111}
+.hero{min-height:600px;display:flex;align-items:center;padding:70px 7%;background:linear-gradient(90deg,#07111fee,#07111f77),url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero div{max-width:720px}.tag{color:#f8c94a;font-weight:800;letter-spacing:2px}.hero h1{font-size:clamp(45px,7vw,82px);line-height:.95;margin:18px 0}.hero p{font-size:19px;line-height:1.7;color:#d8e1ee}.hero button{background:#f8c94a;margin-top:18px;font-size:16px}
+section{padding:75px 7%}.title{text-align:center;font-size:40px;margin:0 0 12px}.subtitle{text-align:center;color:#aebbd0;margin-bottom:45px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}.card{background:#0e1c31;border:1px solid #21324c;border-radius:20px;overflow:hidden;transition:.25s}.card:hover{transform:translateY(-6px);border-color:#f8c94a}.card img{width:100%;height:180px;object-fit:cover}.card-body{padding:22px}.card h3{margin:0 0 10px;font-size:21px}.card p{color:#b8c5d7;line-height:1.6;min-height:74px}.price{color:#f8c94a;font-weight:900}.cta{background:linear-gradient(135deg,#162b4b,#0d182b);text-align:center}.cta button{background:#f8c94a;border:0;padding:14px 24px;border-radius:12px;font-weight:900}
+footer{text-align:center;padding:30px;color:#91a0b5;border-top:1px solid #1b2b42}
+
+
+.menuBtn{background:#f8c94a;color:#111}.sideMenu{position:fixed;left:-330px;top:0;width:310px;height:100vh;background:#091629f5;backdrop-filter:blur(20px);z-index:30;padding:70px 25px 30px;box-shadow:20px 0 70px #0008;transition:.3s;border-right:1px solid #f8c94a44}.sideMenu.open{left:0}.sideMenu button:not(.closeBtn){display:block;width:100%;text-align:left;background:#ffffff08;color:#fff;margin:10px 0;border:1px solid #ffffff12;padding:15px;border-radius:12px}.closeBtn{position:absolute;right:18px;top:15px;background:none;color:#fff;font-size:32px}.menuLogo{font-size:22px;font-weight:900;color:#f8c94a;margin-bottom:25px}.menuLogo span{color:#fff}.telegram{margin-top:25px;color:#aebbd0;line-height:1.8}.telegram b{color:#fff}.telegram a{color:#f8c94a;text-decoration:none}.why{background:linear-gradient(135deg,#0e1c31,#142947)}.whyText{max-width:900px;margin:auto;text-align:center;color:#c4cfdf;line-height:1.9;font-size:18px}.contact{background:#07111f}.contactGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:auto}.contactGrid a{padding:22px;border:1px solid #29405e;border-radius:18px;background:#0e1c31;color:#fff;text-decoration:none;text-align:center;font-weight:700}.contactGrid a:hover{border-color:#f8c94a;transform:translateY(-3px)}.card{cursor:pointer}.card small{display:block;margin-top:10px;color:#f8c94a;font-weight:700}@media(max-width:700px){.contactGrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+</div>
+<div id="site">
+<nav>
+      <div class="logo">DREAM BIG <span>FREELANCE</span></div>
+      <button class="menuBtn" onclick="toggleMenu()">☰ Menu</button>
+    </nav>
+    <aside id="sideMenu" class="sideMenu">
+      <button class="closeBtn" onclick="toggleMenu()">×</button>
+      <div class="menuLogo">DREAM BIG <span>FREELANCE</span></div>
+      <button onclick="goServices()">Explore Services</button>
+<button onclick="setLanguage('en')">🇬🇧 English</button>
+<button onclick="setLanguage('am')">🇪🇹 አማርኛ</button>
+      <button onclick="showWhy()">Why DREAM BIG</button>
+      <button onclick="goContact()">Contact</button>
+      <div class="telegram">Telegram<br><b>@dreambignr7</b><br><a href="https://t.me/dreambignr" target="_blank">Join our channel</a></div>
+    </aside>
+<header class="hero">
+      <div>
+        <div class="tag">YOUR SKILLS. YOUR OPPORTUNITY.</div>
+        <h1 id="heroTitle">Dream Big. Build Bigger.</h1>
+        <p id="heroText">Professional freelance services for clients who want quality, speed and reliable digital support.</p>
+        <button onclick="goServices()">Explore Services</button>
+<button onclick="setLanguage('en')">🇬🇧 English</button>
+<button onclick="setLanguage('am')">🇪🇹 አማርኛ</button>
+      </div>
+    </header>
+<section id="services">
+      <h2 class="title">Our Services</h2>
+      <p class="subtitle">Choose a service and contact us to start your project.</p>
+      <div class="grid" id="cards"></div>
+    </section>
+<section id="why" class="why">
+      <h2 class="title">Why DREAM BIG?</h2>
+      <p class="whyText">DREAM BIG Freelance is built for people and businesses that want dependable digital support without unnecessary complexity. We bring together creative design, technology, research, data and AI services in one professional place. Our goal is to understand what you need, communicate clearly, deliver quality work and help your ideas move from a dream to a real result. When you work with DREAM BIG, you are choosing a simple, modern and client-focused way to get digital work done.</p>
+    </section>
+    <section id="contact" class="contact">
+      <h2 class="title">Contact DREAM BIG</h2>
+      <p class="subtitle">Ready to start? Contact us directly.</p>
+      <div class="contactGrid">
+        <a href="mailto:dreambignr@gmail.com">📧 dreambignr@gmail.com</a>
+        <a href="https://t.me/dreambignr7" target="_blank">💬 Telegram: @dreambignr7</a>
+        <a href="https://t.me/dreambignr" target="_blank">📢 Join our channel: @dreambignr</a>
+      </div>
+    </section>
+<footer>© 2026 Dream Big Freelance • Professional freelance services • dreambignr@gmail.com • @dreambignr7</footer>
+</div>
+<script>
+const data={
+en:[
+["Web Design & Web Development","Professional website design and development built around your goals, with a polished final result delivered in 1 week.","$50–$150"],
+["Video Editing","Creative, polished video editing that turns your raw footage into engaging content.","$100 per video"],
+["Data Entry","Accurate and organized data entry that saves you time and keeps your information clean.","$10 per hour"],
+["Virtual Assistant","Reliable remote assistance for everyday administrative, scheduling and online tasks.","$10 per hour"],
+["Web Research","Fast, focused online research that finds useful information and organizes it clearly.","$10 per hour"],
+["AI Data Annotation","Careful labeling and annotation of data to help AI systems learn from high-quality information.","$10 per hour"],
+["AI & Tech Services","Practical AI and technology support to help you automate, solve problems and work smarter.","$10 per hour"]],
+am:[
+["የድር ዲዛይን እና የድር ልማት","ጥራት ያለው የድር ጣቢያ ዲዛይንና ልማት፣ የመጨረሻ ውጤቱም በ1 ሳምንት ውስጥ ይደርሳል።","10,000–30,000 ብር"],
+["የቪዲዮ ኤዲቲንግ","ጥሬ ቪዲዮዎን ወደ ማራኪ እና ሙያዊ ይዘት የሚቀይር የቪዲዮ ኤዲቲንግ።","15,000 ብር በቪዲዮ"],
+["ዳታ ኤንትሪ","መረጃዎን በትክክል እና በሥርዓት የሚያስገባ አገልግሎት።","1,000 ብር በሰዓት"],
+["ቨርቹዋል አሲስታንት","የአስተዳደር፣ የጊዜ ሰሌዳ እና የመስመር ላይ ሥራዎችን በታማኝነት የሚያግዝ አገልግሎት።","1,000 ብር በሰዓት"],
+["የድር ምርምር","ጠቃሚ መረጃን በፍጥነት ፈልጎ በግልጽ ሁኔታ የሚያደራጅ የድር ምርምር።","1,000 ብር በሰዓት"],
+["AI ዳታ አኖቴሽን","AI ስርዓቶች በጥራት እንዲማሩ የሚያግዝ ጥንቃቄ ያለው የዳታ መለያ ሥራ።","1,000 ብር በሰዓት"],
+["AI እና ቴክ አገልግሎቶች","AI እና ቴክኖሎጂን በመጠቀም ሥራዎን ለማቀላጠፍ የሚረዳ ተግባራዊ ድጋፍ።","1,000 ብር በሰዓት"]]
+};
+const imgs=["photo-1498050108023-c5249f4df085","photo-1574717024653-61fd2cf4d44d","photo-1551288049-bebda4e38f71","photo-1556761175-b413da4baf72","photo-1454165804606-c3d57bc86b40","photo-1677442136019-21780ecad995","photo-1518770660439-4636190af475"];
+const ui={
+en:{services:"Our Services",servicesSub:"Choose a service and contact us to start your project.",why:"Why DREAM BIG?",whyText:"DREAM BIG Freelance is built for people and businesses that want dependable digital support without unnecessary complexity. We bring together creative design, technology, research, data and AI services in one professional place. Our goal is to understand what you need, communicate clearly, deliver quality work and help your ideas move from a dream to a real result.",contact:"Contact DREAM BIG",contactSub:"Ready to start? Contact us directly.",join:"Join our channel",click:"Click to contact us",hero:"Dream Big. Build Bigger.",heroText:"Professional freelance services for clients who want quality, speed and reliable digital support."},
+am:{services:"አገልግሎቶቻችን",servicesSub:"አገልግሎት ይምረጡና ፕሮጀክትዎን ለመጀመር ያግኙን።",why:"ለምን DREAM BIG?",whyText:"DREAM BIG Freelance አስተማማኝ የዲጂታል ድጋፍ ለሚፈልጉ ሰዎችና ንግዶች የተሰራ ነው። ዲዛይን፣ ቴክኖሎጂ፣ ምርምር፣ ዳታ እና AI አገልግሎቶችን በአንድ ሙያዊ ቦታ እናቀርባለን። ግባችን ፍላጎትዎን መረዳት፣ በግልጽ መግባባት፣ ጥራት ያለው ስራ ማቅረብ እና ሀሳብዎን ከህልም ወደ እውነተኛ ውጤት ማምጣት ነው።",contact:"DREAM BIGን ያግኙ",contactSub:"ለመጀመር ዝግጁ ነዎት? በቀጥታ ያግኙን።",join:"ቻናላችንን ይቀላቀሉ",click:"ለማግኘት ይጫኑ",hero:"ትልቅ ህልም። ትልቅ ግንባታ።",heroText:"ጥራት፣ ፍጥነት እና አስተማማኝ ዲጂታል ድጋፍ ለሚፈልጉ ደንበኞች ሙያዊ የፍሪላንስ አገልግሎቶች።"}};
+let lang='en';
+function render(){
+ const d=data[lang], u=ui[lang];
+ document.getElementById('cards').innerHTML=d.map((x,i)=>`<article class="card" onclick="goContact()"><img src="https://images.unsplash.com/${imgs[i]}?auto=format&fit=crop&w=800&q=80"><div class="card-body"><h3>${x[0]}</h3><p>${x[1]}</p><div class="price">${x[2]}</div><small>${u.click}</small></div></article>`).join('');
+ document.querySelector('#services .title').textContent=u.services;
+ document.querySelector('#services .subtitle').textContent=u.servicesSub;
+ document.querySelector('#why .title').textContent=u.why;
+ document.querySelector('#why .whyText').textContent=u.whyText;
+ document.querySelector('#contact .title').textContent=u.contact;
+ document.querySelector('#contact .subtitle').textContent=u.contactSub;
+ document.querySelector('.hero h1').textContent=u.hero;
+ document.querySelector('.hero p').textContent=u.heroText;
+ document.documentElement.lang=lang;
+}
+function setLanguage(l){lang=l;render();toggleClose()}
+function toggleMenu(){document.getElementById('sideMenu').classList.toggle('open')}
+function toggleClose(){document.getElementById('sideMenu').classList.remove('open')}
+function goServices(){toggleClose();document.getElementById('services').scrollIntoView({behavior:'smooth'})}
+function goContact(){toggleClose();document.getElementById('contact').scrollIntoView({behavior:'smooth'})}
+function showWhy(){toggleClose();document.getElementById('why').scrollIntoView({behavior:'smooth'})}
+render();
+</script>
+</body></html>
